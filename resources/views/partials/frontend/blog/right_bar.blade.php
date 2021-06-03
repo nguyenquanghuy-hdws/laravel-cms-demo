@@ -26,7 +26,7 @@
                             <strong>{{ $post->title }}</strong>
                             <div class="d-flex align-items-center">
                                 <div class="views"><i class="icon-clock"></i> {{ relative_time($post->created_at) }}</div>
-                                <div class="views"><i class="icon-eye"></i> {{ $post->total_viewed }}</div>
+                                <div class="views"><i class="icon-eye"></i> {{ $post->total_viewed ?? '' }}</div>
                                 <!-- <div class="comments"><i class="icon-comment"></i>12</div> -->
                             </div>
                         </div>

@@ -8,11 +8,8 @@ trait UpdateViewedPost
 {
     private function updateViewedPost(Post $post)
     {
-        $latestViewed = $post->latestViewed();
-        $totalViewed = $post->totalViewed();
-        $post->update([
-            'latest_viewed_at' => $latestViewed,
-            'total_viewed' => $totalViewed
-        ]);
+        $post->latest_viewed_at = $post->latestViewed() ?? now();
+        $post->total_viewed = $post->totalViewed() ?? 0 ;
+        $post->save();
     }
 }
