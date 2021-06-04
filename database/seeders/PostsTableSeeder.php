@@ -19,7 +19,9 @@ class PostsTableSeeder extends Seeder
             \App\Models\Post::create([
                 'title' => $faker->words(6, true),
                 'content' => $faker->paragraph(),
-                'creator_id' => $faker->numberBetween(1, 3)
+                'creator_id' => $faker->numberBetween(1, 3),
+                'voucher_enable' => $faker->boolean(),
+                'voucher_quantity' => $faker->numberBetween(1, 5),
             ]);
         }
     }

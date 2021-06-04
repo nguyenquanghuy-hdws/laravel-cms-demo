@@ -29,6 +29,15 @@
                 <div class="post-body">
                     <p>{{ $currentPost->content ?? '' }}</p>
                 </div>
+                @auth
+                    @if($currentPost->voucher_enable == true && $currentPost->voucher_quantity > 0)
+                    <div class="coupon float-right">
+                        <div class="coupon-deal">50%</div>
+                        <div class='coupon-stamp'>Get your voucher code</div>
+                    </div>
+                    @endif
+                @endauth
+                <div class="clearfix"></div>
                 <div class="post-tags"><a href="#" class="tag">#Business</a><a href="#" class="tag">#Tricks</a><a href="#" class="tag">#Financial</a><a href="#" class="tag">#Economy</a></div>
                 <!-- <div class="posts-nav d-flex justify-content-between align-items-stretch flex-column flex-md-row"><a href="#" class="prev-post text-left d-flex align-items-center">
                     <div class="icon prev"><i class="fa fa-angle-left"></i></div>
