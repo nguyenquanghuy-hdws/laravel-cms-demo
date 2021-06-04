@@ -33,7 +33,10 @@
                     @if($currentPost->voucher_enable == true && $currentPost->voucher_quantity > 0)
                     <div class="coupon float-right">
                         <div class="coupon-deal">50%</div>
-                        <div class='coupon-stamp'>Get your voucher code</div>
+                        <div class='coupon-stamp crm_get-voucher-code'
+                            data-target="{{ $currentPost->id }}"
+                            data-url="{{ route('blog_get_voucher_code') }}"
+                        >Get your voucher code</div>
                     </div>
                     @endif
                 @endauth
