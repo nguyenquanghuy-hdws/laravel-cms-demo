@@ -18,7 +18,9 @@ class Post extends Model
         'content',
         'creator_id',
         'total_viewed',
-        'latest_viewed_at'
+        'latest_viewed_at',
+        'voucher_enable',
+        'voucher_quantity'
     ];
 
     // public $filterable = [];

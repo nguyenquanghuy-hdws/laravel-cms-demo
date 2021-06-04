@@ -4,7 +4,7 @@
 .dropdown-submenu {
     position: relative;
 }
-.dropdown-submenu>.dropdown-menu {
+.dropdown-submenu > .dropdown-menu {
     top: 0;
     left: 10rem;
     margin-top: -6px;
@@ -18,8 +18,8 @@
 }
 .dropdown-item.dropdown-toggle::after {
     position: absolute;
-    right: .8rem;
-    top: .8rem;
+    right: 0.8rem;
+    top: 0.8rem;
 }
 .has-search .form-control {
     padding-left: 2rem;

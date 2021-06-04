@@ -38,4 +38,38 @@ class Handler extends ExceptionHandler
             //
         });
     }
+
+    public function render($request, Throwable $exception) {
+        if ($exception instanceof \Illuminate\Database\Eloquent\ModelNotFoundException) {
+            return response()->json([
+                'error' => 'Entry for '.str_replace('App\\', '', $exception->getModel()).' not found',
+                'title' => 'Error',
+                'message' => 'Record not found, please check again!'
+            ], 404);
+        } elseif ($exception instanceof \Illuminate\Database\QueryException) {
+            return response()->json([
+                'error' => 'Query run failed',
+                'title' => 'Error',
+                'message' => 'Please check again query!'
+            ], 400);
+        } elseif ($exception instanceof \Illuminate\Http\Exceptions\PostTooLargeException) {
+            return response()->json([
+                'error' => 'Request size too large',
+                'title' => 'Error',
+                'message' => 'Size of request to large to handle'
+            ], 413);
+        } elseif ($exception instanceof \App\Exceptions\SystemErrorException) {
+            return response()->json([
+                'title' => $exception->getTitle(),
+                'message' => $exception->getMessage()
+            ], $exception->getCode());
+        } elseif ($exception instanceof \App\Exceptions\VoucherNotAvailableException) {
+            return response()->json([
+                'title' => $exception->getTitle(),
+                'message' => $exception->getMessage()
+            ], $exception->getCode());
+        }
+
+        return parent::render($request, $exception);
+    }
 }

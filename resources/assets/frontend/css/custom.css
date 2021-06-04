@@ -9,3 +9,29 @@
     height: 20px;
     line-height: 20px;
 }
+.coupon {
+    display: flex;
+    width: 300px;
+    height: 80px;
+    background-image: radial-gradient( circle at 1px 8px, transparent 6px, #bfbfbf 6px, #bfbfbf 0px ), radial-gradient( circle at 100px 8px, transparent 6px, #bfbfbf 6px, #bfbfbf 0px );
+    background-size: 200px 18px;
+    background-position: 0 0, 200px 0;
+    background-repeat-x: no-repeat;
+    font-size: 40px;
+    color: #fff;
+    font-weight: bold;
+    line-height: 80px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.coupon-deal {
+    width: 60%;
+    text-align: center;
+}
+.coupon-stamp {
+    width: 40%;
+    font-size: 16px;
+    line-height: 18px;
+    border-left: 1px dashed #fafafa;
+    padding: 15px 10px;
+}

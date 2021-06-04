@@ -22,6 +22,7 @@ Route::get('/', ['App\Http\Controllers\Frontend\HomeController', 'index'])->name
 Route::get('/blog', ['App\Http\Controllers\Frontend\BlogController', 'index'])->name('blog');
 Route::get('/blog/cat-{category_id}', ['App\Http\Controllers\Frontend\BlogController', 'index'])->name('blog_category');
 Route::get('/blog/{post_id}/details', ['App\Http\Controllers\Frontend\BlogController', 'details'])->name('blog_details');
+Route::post('/blog/get_voucher_code', ['App\Http\Controllers\Frontend\BlogController', 'get_voucher_code'])->name('blog_get_voucher_code');
 
 Route::group(['prefix'=>'backend', 'middleware'=>['can:isAdmin'] , 'as'=>'backend.'], function() {
     // Dashboard
